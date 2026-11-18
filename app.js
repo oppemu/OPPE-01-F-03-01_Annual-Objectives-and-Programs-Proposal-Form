@@ -57,7 +57,19 @@ function documents(result){
  const a=document.createElement('a');a.href=u.href;a.textContent='เปิดตัวอย่าง PDF / ดาวน์โหลด';a.target='_blank';a.rel='noopener';box.appendChild(a);
 }
 
+let projectSignInOpened=false;
 async function connect(){
+ if(!projectSignInOpened){
+  try{
+   const url=ProjectTransport.loginUrl();
+   window.open(url,'_blank','noopener,noreferrer');
+   projectSignInOpened=true;
+   document.querySelector('#connect').textContent='เชื่อมต่อหลังลงชื่อเข้าใช้';
+   message('ลงชื่อเข้าใช้บัญชีมหาวิทยาลัยในแท็บที่เปิด แล้วกลับมากดเชื่อมต่อ หากไม่มีแท็บเปิดให้อนุญาตป๊อปอัป');
+  }catch(e){message(e.message);}
+  return;
+ }
+
  if(busy)return;busy=true;applyLock();message('กำลังตรวจบัญชีผู้ใช้งาน');
  try{
   await ProjectTransport.reconnect();

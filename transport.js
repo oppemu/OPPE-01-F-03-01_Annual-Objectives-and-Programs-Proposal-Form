@@ -24,7 +24,7 @@
     nonce=random();u.searchParams.set('origin',location.origin);u.searchParams.set('nonce',nonce);
     readyPromise=new Promise((resolve,reject)=>{resolveReady=resolve;rejectReady=reject;});
     frame=document.createElement('iframe');frame.title='การเชื่อมต่อข้อมูลโครงการ';frame.hidden=true;frame.src=u.href;document.body.appendChild(frame);
-    readyTimer=setTimeout(()=>{rejectReady(Error('เชื่อมต่อไม่ได้ กรุณาลงชื่อเข้าใช้ Google แล้วลองอีกครั้ง'));readyPromise=null;},30000);
+    readyTimer=setTimeout(()=>{rejectReady(Error('เชื่อมต่อไม่ได้หลังลงชื่อเข้าใช้ กรุณาตรวจสิทธิ์และเวอร์ชันดีพลอย Apps Script รวมถึงการอนุญาตแสดงผลใน iframe'));readyPromise=null;},30000);
     return readyPromise;
   }
   root.addEventListener('message',event=>{

@@ -1,1 +1,1 @@
-window.APP_CONFIG = { webAppUrl: 'https://script.google.com/a/macros/mahidol.ac.th/s/AKfycbybzYVdyUgNee_v6yIsF8aLX4aqjVenbd31jiibcJbi9mWgmqALEYPNK5YbO1IotU5Z/exec' }; // ใส่ URL /exec หลังผู้ใช้ Deploy โค้ดล่าสุดด้วยตนเอง ไม่ใช้ deployment รุ่นเก่า
+window.APP_CONFIG = { webAppUrl: 'https://script.google.com/a/macros/mahidol.ac.th/s/AKfycbw9UuVMtQLXbpKoqI1NlDDJS018q-DoUzkqwz4vmUrcGXRyWWLJ42R6S7QCvmnMipWS/exec' };
